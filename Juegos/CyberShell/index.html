@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Shell - Inicio</title>
+    
+    <link rel="stylesheet" href="../../Css/style.css">
+    <link rel="icon" type="image/png" href="../../Assets/favicon.png?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="../../index.html">
+                    <img src="../../Assets/isopod-icon.png" alt="Tiny Shell Studio" class="nav-icon">
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="info.html">EL JUEGO</a></li>
+                <li><a href="media.html">MEDIA</a></li> 
+                <li><a href="#blog" style="color:#ff0055; font-weight:bold;">NOTICIAS</a></li> 
+                <li><a href="../../Equipo/equipo.html">EQUIPO</a></li>
+            </ul>
+
+            <div class="cta-container">
+                <a href="#" target="_blank" class="join-btn">STEAM</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-layered">
+            
+            <div class="scroll-fade-overlay"></div>
+
+            <div class="layer-bg" style="background-image: url('https://images.unsplash.com/photo-1555680202-c35005a71661?q=80&w=1920&auto=format&fit=crop');"></div>
+
+            <div class="hero-content-layered reveal" style="position: absolute; top: 30%; width: 100%; z-index: 5; text-align: center;">
+                <h1 style="color:#ff0055; font-size: 4rem; text-shadow: 0 0 20px #ff0055;">CYBER SHELL</h1>
+                <div class="hero-tags" style="display: flex; justify-content: center; gap: 10px;">
+                    <span style="border-color:#ff0055; color:#ff0055;">STEALTH</span>
+                    <span style="border-color:#ff0055; color:#ff0055;">HACKING</span>
+                    <span style="border-color:#ff0055; color:#ff0055;">SCI-FI</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="text-align:center; max-width:800px; margin:0 auto; padding-top: 50px;">
+            <div class="reveal">
+                <h2 style="color:#ff0055; margin-bottom:20px;">EL FUTURO ES TUYO</h2>
+                <p style="font-size:1.2rem; line-height:1.6; margin-bottom: 30px;">
+                    En un mundo conectado, el silencio es tu mejor arma. Cyber Shell combina 
+                    sigilo táctico con mecánicas de hackeo en tiempo real.
+                </p>
+                <a href="info.html" class="cta-button" style="background-color: #ff0055; clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);">VER CARACTERÍSTICAS</a>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section" style="background:#0e0e15;">
+            <h2 class="section-title">REGISTRO DEL SISTEMA</h2>
+            <div class="news-container reveal">
+                
+                <div class="news-card" onclick="openNewsModal(this)"
+                     data-title="Devlog #1: IA Enemiga" data-date="15 ENE 2026"
+                     data-image="https://via.placeholder.com/600x300?text=Enemy+AI"
+                     data-content="<p>Mejoras en drones.</p>">
+                    <div class="news-thumb" style="background-image: url('https://via.placeholder.com/400x250/330011/fff?text=Devlog+1');"></div>
+                    <div class="news-body">
+                        <span class="news-date" style="color:#ff0055;">15 ENERO 2026</span>
+                        <h3>MEJORAS EN LA IA</h3>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="openNewsModal(this)"
+                     data-title="Nuevo Arsenal" data-date="02 ENE 2026"
+                     data-image="https://via.placeholder.com/600x300?text=Armas"
+                     data-content="<p>Nuevas armas disponibles.</p>">
+                    <div class="news-thumb" style="background-image: url('https://via.placeholder.com/400x250/001133/fff?text=Armas');"></div>
+                    <div class="news-body">
+                        <span class="news-date" style="color:#ff0055;">02 ENERO 2026</span>
+                        <h3>NUEVO ARSENAL</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.youtube.com/@TinyShellStudio" target="_blank" class="social-circle"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/TinyShellStudio" target="_blank" class="social-circle"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/tiny.shell.studio" target="_blank" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://discord.gg/GHWtuVbFzs" target="_blank" class="social-circle"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="footer-logo">
+            <h2 style="color:#444;">TINY SHELL STUDIO</h2>
+        </div>
+         <div class="footer-links">
+            <a href="mailto:contact.tinyshellstudio@gmail.com">Contacto</a> | <a href="Legal/terminos.html">Términos</a> | <a href="Legal/privacidad.html">Privacidad</a> | <a href="Legal/seguridad.html">Seguridad</a>
+        </div>
+        <p class="copyright">© 2025 Tiny Shell Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="newsModal" class="modal">
+        <div class="modal-content news-modal-content">
+            <span class="close-btn" onclick="closeNewsModal()"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-header-image" id="modalImage"></div>
+            <div class="modal-body-scroll">
+                <span id="modalDate" class="modal-date-tag" style="color:#ff0055;">FECHA</span>
+                <h2 id="modalTitle" style="color:#fff;">Título</h2>
+                <div id="modalText" class="modal-text-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../JS/script.js"></script>
+</body>
+</html>

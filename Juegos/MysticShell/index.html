@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystic Shell - Inicio</title>
+    
+    <link rel="stylesheet" href="../../Css/style.css">
+    <link rel="icon" type="image/png" href="../../Assets/favicon.png?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="../../index.html">
+                    <img src="../../Assets/isopod-icon.png" alt="Tiny Shell Studio" class="nav-icon">
+                </a>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="info.html">EL JUEGO</a></li>
+                <li><a href="media.html">MEDIA</a></li> 
+                <li><a href="#blog" style="color:var(--accent-color); font-weight:bold;">BLOG</a></li>
+                <li><a href="../../Equipo/equipo.html">EQUIPO</a></li>
+            </ul>
+
+            <div class="cta-container">
+                <a href="https://tinyshellstudio.itch.io/" target="_blank" class="join-btn">JUGAR AHORA</a>
+            </div>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-layered">
+            
+            <div class="scroll-fade-overlay"></div>
+
+            <div class="layer-bg" style="background-image: url('https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=1920&auto=format&fit=crop');"></div>
+
+            <div class="hero-content-layered reveal" style="position: absolute; top: 30%; width: 100%; z-index: 5; text-align: center;">
+                <h1 style="color:var(--accent-color); font-size: 4rem; text-shadow: 0 5px 20px #000;">MYSTIC SHELL</h1>
+                <div class="hero-tags" style="display: flex; justify-content: center; gap: 10px;">
+                    <span>RPG</span> <span>SANDBOX</span> <span>MULTIPLAYER</span>
+                </div>
+            </div>
+            
+            </section>
+
+        <section class="content-section" style="text-align:center; max-width:800px; margin:0 auto; padding-top: 50px;">
+            <div class="reveal">
+                <h2 style="color:var(--accent-color); margin-bottom:20px;">¿QUÉ ES MYSTIC SHELL?</h2>
+                <p style="font-size:1.2rem; line-height:1.6; margin-bottom: 30px;">
+                    Embárcate en una aventura construida tanto para la creación como para el juego. 
+                    Mystic Shell combina la libertad de un sandbox con la profundidad de un RPG.
+                    Explora un mundo generado proceduralmente lleno de mazmorras y secretos.
+                </p>
+                <a href="info.html" class="cta-button">VER CARACTERÍSTICAS</a>
+            </div>
+        </section>
+
+        <section id="blog" class="content-section" style="background:#0e0e15;">
+            <h2 class="section-title">ÚLTIMAS NOTICIAS</h2>
+            <div class="news-container reveal">
+                
+                <div class="news-card" onclick="openNewsModal(this)"
+                     data-title="Notas del Parche Alpha 0.5" data-date="10 DIC 2025"
+                     data-image="https://via.placeholder.com/600x300/1a1a2e/00bfff?text=Update+0.5"
+                     data-content="<p>Mejoras en el sistema de combate.</p>">
+                    <div class="news-thumb" style="background-image: url('https://via.placeholder.com/400x250/111/fff?text=Update+0.5');"></div>
+                    <div class="news-body">
+                        <span class="news-date">10 DICIEMBRE 2025</span>
+                        <h3>NOTAS DEL PARCHE ALPHA 0.5</h3>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="openNewsModal(this)"
+                     data-title="Bestiario: Golems" data-date="01 DIC 2025"
+                     data-image="https://via.placeholder.com/600x300/2e1a1a/ff5500?text=Golems"
+                     data-content="<p>Presentamos al Golem de Piedra.</p>">
+                    <div class="news-thumb" style="background-image: url('https://via.placeholder.com/400x250/221111/fff?text=Bestiario');"></div>
+                    <div class="news-body">
+                        <span class="news-date">01 DICIEMBRE 2025</span>
+                        <h3>CONOCE A LAS CRIATURAS</h3>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="openNewsModal(this)"
+                     data-title="Nuevo Bioma" data-date="20 NOV 2025"
+                     data-image="https://via.placeholder.com/600x300/002233/00ffff?text=Bosque"
+                     data-content="<p>Explora el Bosque de Cristal.</p>">
+                    <div class="news-thumb" style="background-image: url('https://via.placeholder.com/400x250/001122/fff?text=Nuevo+Bioma');"></div>
+                    <div class="news-body">
+                        <span class="news-date">20 NOVIEMBRE 2025</span>
+                        <h3>NUEVO BIOMA REVELADO</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://www.youtube.com/@TinyShellStudio" target="_blank" class="social-circle"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://x.com/TinyShellStudio" target="_blank" class="social-circle"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/tiny.shell.studio" target="_blank" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://discord.gg/GHWtuVbFzs" target="_blank" class="social-circle"><i class="fa-brands fa-discord"></i></a>
+        </div>
+        <div class="footer-logo">
+            <h2 style="color:#444;">TINY SHELL STUDIO</h2>
+        </div>
+         <div class="footer-links">
+            <a href="mailto:contact.tinyshellstudio@gmail.com">Contacto</a> | <a href="Legal/terminos.html">Términos</a> | <a href="Legal/privacidad.html">Privacidad</a> | <a href="Legal/seguridad.html">Seguridad</a>
+        </div>
+        <p class="copyright">© 2025 Tiny Shell Studio. Todos los derechos reservados.</p>
+    </footer>
+
+    <div id="newsModal" class="modal">
+        <div class="modal-content news-modal-content">
+            <span class="close-btn" onclick="closeNewsModal()"><i class="fa-solid fa-xmark"></i></span>
+            <div class="modal-header-image" id="modalImage"></div>
+            <div class="modal-body-scroll">
+                <span id="modalDate" class="modal-date-tag">FECHA</span>
+                <h2 id="modalTitle" style="color:#fff;">Título</h2>
+                <div id="modalText" class="modal-text-body"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../JS/script.js"></script>
+</body>
+</html>
