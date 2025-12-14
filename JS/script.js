@@ -18,7 +18,7 @@ setTimeout(() => {
     if (preloader && !preloader.classList.contains("hidden")) {
         preloader.classList.add("hidden");
     }
-}, 1000);
+}, 500);
 
 /* =========================================
    2. FUNCIONES GLOBALES (Noticias de Juegos)
@@ -77,14 +77,27 @@ window.onclick = function(event) {
    ========================================= */
 document.addEventListener("DOMContentLoaded", () => {
     
-    // --- A. MENÚ MÓVIL ---
+// --- A. MENÚ MÓVIL ---
     const menuToggle = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
+        // 1. Abrir/Cerrar al tocar el botón hamburguesa
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             menuToggle.classList.toggle('active'); 
+        });
+
+        // 2. NUEVO: CERRAR AL TOCAR CUALQUIER ENLACE DEL MENÚ
+        // Seleccionamos todos los enlaces dentro del menú
+        const menuLinks = document.querySelectorAll('.nav-links a');
+        
+        // A cada uno le decimos: "Cuando te toquen, cierra el menú"
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+            });
         });
     }
 
