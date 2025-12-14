@@ -336,3 +336,310 @@ footer { background-color: #08080c; padding: 50px 20px 30px; text-align: center;
     z-index: 5 !important;
     position: relative;
 }
+
+/* =========================================
+   11. CORRECCIONES PARA MÓVIL (RESPONSIVE)
+   ========================================= */
+
+@media screen and (max-width: 900px) {
+    
+    /* 1. ARREGLAR EL MENÚ DESPLEGABLE */
+    .nav-links {
+        /* Centrar los textos para que no se peguen a la izquierda */
+        text-align: center;
+        /* Darle espacio arriba para que no choque con el logo */
+        padding-top: 40px;
+        /* Un poco de transparencia para que se vea moderno */
+        background-color: rgba(26, 26, 46, 0.98); 
+        backdrop-filter: blur(10px);
+    }
+    
+    .nav-links li {
+        /* Separar más los elementos del menú (Inicio, Estudio, etc.) */
+        margin: 25px 0;
+    }
+    
+    .nav-links a {
+        /* Hacer la letra del menú un poco más grande y fácil de tocar */
+        font-size: 1.2rem;
+    }
+
+    /* 2. ARREGLAR LOS TÍTULOS GIGANTES (SOBRE EL JUEGO) */
+    h1 {
+        font-size: 2.5rem !important; /* Reducir tamaño de títulos principales */
+    }
+    
+    .section-title, .about-title {
+        font-size: 2rem !important; /* Reducir títulos de sección */
+    }
+    
+    .hero-content h1, 
+    .hero-content-layered h1 {
+        font-size: 2.5rem !important; /* El título del Hero también más chico */
+    }
+
+    /* 3. ARREGLAR MÁRGENES */
+    .content-section {
+        padding: 50px 20px; /* Menos relleno en celular */
+    }
+    
+    .container p {
+        font-size: 1rem !important; /* Texto de párrafo más legible */
+    }
+}
+/* =========================================
+   12. PRELOADER (PANTALLA DE CARGA)
+   ========================================= */
+#preloader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #050505; /* Fondo negro profundo */
+    z-index: 9999; /* Encima de TODO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-icon {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+    /* Animación de rebote/latido */
+    animation: pulse 1.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 15px var(--accent-color));
+}
+
+.loader-text {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    animation: blink 2s infinite;
+}
+
+/* Clases para ocultarlo */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* =========================================
+   13. SECCIÓN NEWSLETTER (DEFINITIVA - SIN CUBO)
+   ========================================= */
+.newsletter-section {
+    padding: 60px 20px;
+    background-color: #151525; /* Fondo oscuro que conecta con el footer */
+    position: relative;
+    z-index: 2;
+}
+
+.newsletter-box {
+    /* FORZAMOS QUE SEA TRANSPARENTE */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    /* Estructura */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 0;
+    width: 100%;
+    max-width: 1000px; /* Para que no se estire demasiado */
+    margin: 0 auto;
+}
+
+/* Icono del sobre */
+.newsletter-icon i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    filter: drop-shadow(0 0 10px rgba(0, 191, 255, 0.4));
+}
+
+/* Textos */
+.newsletter-content {
+    flex: 1;
+    text-align: left;
+    min-width: 300px;
+}
+
+.newsletter-content h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.newsletter-content p {
+    color: #aaa;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Formulario */
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #0a0a1a;
+    color: #fff;
+    font-family: var(--font-body);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+.newsletter-form button {
+    padding: 15px 25px;
+    background-color: var(--accent-color);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+}
+
+/* Ajuste móvil */
+@media (max-width: 768px) {
+    .newsletter-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .newsletter-content {
+        text-align: center;
+        min-width: auto;
+    }
+    .newsletter-form {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* =========================================
+   14. NUEVOS ESTILOS PARA LA VENTANA MODAL
+   ========================================= */
+.modal {
+    display: none; /* Oculta por defecto */
+    position: fixed;
+    z-index: 10000; /* Encima de todo, incluso del header */
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.85); /* Fondo negro semi-transparente */
+    backdrop-filter: blur(8px); /* Efecto de desenfoque en el fondo */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Clase para mostrar la modal */
+.modal.active { display: flex; }
+
+/* El diseño de la "ventanita" */
+.modal-content {
+    background: linear-gradient(145deg, #1a1a2e, #16213e); /* Usamos el estilo del cubo aquí que sí queda bien */
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    padding: 50px 40px;
+    text-align: center;
+    position: relative;
+    width: 90%; max-width: 450px;
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.2);
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animación de entrada con rebote */
+}
+
+/* Animación de aparición */
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Botón de cerrar (X) */
+.close-modal {
+    position: absolute;
+    top: 15px; right: 20px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.close-modal:hover { color: var(--accent-color); transform: scale(1.1); }
+
+/* Icono y textos de la modal */
+.modal-icon {
+    font-size: 5rem;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 20px var(--accent-color));
+    display: block;
+}
+.modal-content h2 {
+    font-family: var(--font-heading);
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+.modal-content p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+/* =========================================
+   15. EFECTO DE PARTÍCULAS (DUST) GLOBAL
+   ========================================= */
+.dust {
+    position: absolute;
+    width: 100%; height: 100%;
+    /* Usamos la misma textura de estrellas/polvo */
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.4; /* Un poco más visible para el preloader */
+    animation: moveDust 50s linear infinite; /* Animación lenta */
+    z-index: 0; /* Detrás del contenido */
+    pointer-events: none; /* Para que no moleste al clic */
+}
+
+@keyframes moveDust {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}

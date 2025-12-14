@@ -3,22 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Perdido en el Vacío</title>
+    <title>404 - Zona Desconocida</title>
+    
     <link rel="stylesheet" href="Css/style.css">
     <link rel="icon" type="image/png" href="Assets/favicon.png?v=2">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400&family=Piedra&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #050505;
+            /* Fondo: Un degradado radial que simula una linterna en la oscuridad */
+            background-image: radial-gradient(circle at center, #1a1a2e 0%, #000000 85%);
+            overflow: hidden;
+            font-family: 'Lato', sans-serif;
+            color: #fff;
+        }
+
+        /* Partículas de polvo flotando (Decoración) */
+        .dust {
+            position: absolute;
+            width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3;
+            animation: moveDust 50s linear infinite;
+            z-index: 0;
+            pointer-events: none;
+        }
+        @keyframes moveDust { from { background-position: 0 0; } to { background-position: 100px 100px; } }
+
+        .error-container {
+            position: relative;
+            z-index: 2;
+            padding: 40px;
+            max-width: 700px;
+        }
+
+        /* EL NÚMERO 404 ROCOSO */
+        .error-code {
+            font-family: 'Piedra', cursive; /* Fuente que parece piedra rota */
+            font-size: 12rem; /* Gigante */
+            margin: 0;
+            line-height: 0.9;
+            color: #222; /* Color piedra oscura */
+            
+            /* Truco para que parezca 3D/Roca iluminada */
+            text-shadow: 
+                -2px -2px 0 #444,
+                2px 2px 0 #000,
+                0 0 20px rgba(0, 191, 255, 0.2); /* Resplandor azul místico */
+            
+            animation: floatText 4s ease-in-out infinite;
+        }
+
+        .error-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+        }
+        
+        .error-message {
+            color: #aaa;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* EL ISÓPODO PERDIDO */
+        .lost-isopod {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--accent-color)); /* Brillo alrededor */
+            animation: spin 10s linear infinite; /* Rota muy lento como flotando en el vacío */
+        }
+
+        /* BOTÓN MODERNO */
+        .btn-return {
+            display: inline-block;
+            padding: 15px 40px;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: 0.3s;
+            background: rgba(0,0,0,0.5);
+        }
+        .btn-return:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes spin { 
+            0% { transform: rotate(0deg); } 
+            25% { transform: rotate(5deg); } 
+            75% { transform: rotate(-5deg); } 
+            100% { transform: rotate(0deg); } 
+        }
+
+        /* Ajuste para celular */
+        @media (max-width: 600px) {
+            .error-code { font-size: 8rem; }
+            .error-title { font-size: 1.8rem; }
+        }
+    </style>
 </head>
-<body style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #08080c; font-family: 'Lato', sans-serif;">
+<body>
 
-    <h1 style="font-size: 8rem; color: #00bfff; margin: 0; text-shadow: 0 0 20px #00bfff; font-family: 'Cinzel', serif;">404</h1>
-    
-    <h2 style="font-size: 2rem; margin-bottom: 20px; color: #fff;">TE HAS PERDIDO EN EL VACÍO DIGITAL</h2>
-    
-    <p style="font-size: 1.2rem; color: #888; max-width: 600px; margin-bottom: 40px; padding: 0 20px;">
-        Parece que el enlace que buscas ha sido eliminado, movido o nunca existió. 
-        No te preocupes, siempre puedes regresar a la base.
-    </p>
+    <div class="dust"></div>
 
-    <a href="index.html" style="padding: 15px 40px; background-color: #00bfff; color: #000; text-decoration: none; font-weight: bold; text-transform: uppercase; clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%); transition: 0.3s;">VOLVER AL HUB</a>
+    <div class="error-container">
+        <img src="Assets/isopod-icon.png" alt="Isópodo perdido" class="lost-isopod">
+        
+        <h1 class="error-code">404</h1>
+        
+        <h2 class="error-title">¡ZONA NO GENERADA!</h2>
+        
+        <p class="error-message">
+            Parece que has cavado demasiado profundo. Este bioma aún no existe o ha sido eliminado del mapa.
+        </p>
+
+        <a href="index.html" class="btn-return">
+            VOLVER A LA SUPERFICIE
+        </a>
+    </div>
 
 </body>
 </html>

@@ -18,6 +18,7 @@
     <meta name="twitter:title" content="Tiny Shell Studio">
     <meta name="twitter:description" content="Desarrollo de videojuegos indie. Creamos mundos, vivimos historias.">
     <meta name="twitter:image" content="https://tinyshellstudio.github.io/Assets/social-preview.jpg">
+
     <link rel="stylesheet" href="Css/style.css">
     <link rel="icon" type="image/png" href="Assets/favicon.png?v=2">
     
@@ -25,10 +26,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 </head>
 
 <body class="hub-page">
+
+    <div id="preloader">
+        <div class="dust"></div>
+        <div class="loader-content">
+            <img src="Assets/isopod-icon.png" alt="Cargando..." class="loader-icon">
+            <h2 class="loader-text">CARGANDO MUNDO...</h2>
+        </div>
+    </div>
 
     <header>
         <nav class="navbar">
@@ -126,9 +134,32 @@
                     <a href="https://tinyshellstudio.itch.io/" target="_blank" class="social-icon itch"><i class="fa-brands fa-itch-io"></i></a>
                     <a href="https://discord.gg/GHWtuVbFzs" target="_blank" class="social-icon discord"><i class="fa-brands fa-discord"></i></a>
                 </div>
-                
             </div>
         </section>
+
+        <section class="newsletter-section">
+            <div class="container reveal">
+                <div class="newsletter-box">
+                    <div class="newsletter-icon">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <div class="newsletter-content">
+                        <h3>MANTENTE AL DÍA</h3>
+                        <p>Recibe noticias de desarrollo, fechas de beta y secretos de Tiny Shell Studio.</p>
+                    </div>
+                    
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="hidden" name="_subject" value="🐌 ¡Nuevo Recluta en la Colmena!">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <input type="email" name="email" placeholder="Tu correo electrónico..." required id="newsletter-email">
+                        <button type="submit">SUSCRIBIRSE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -146,6 +177,27 @@
         </div>
         <p class="copyright">© 2025 Tiny Shell Studio. Todos los derechos reservados.</p>
     </footer>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <i class="fa-solid fa-circle-check modal-icon"></i>
+            <h2>¡BIENVENIDO A LA COLMENA!</h2>
+            <p>Has sido suscrito exitosamente. Pronto recibirás noticias y secretos del desarrollo.</p>
+        </div>
+    </div>
+
+    <div id="newsModal" class="modal">
+        <div class="news-modal-content">
+            <span class="close-btn" onclick="closeNewsModal()">&times;</span>
+            <div id="modalImage" class="modal-header-image"></div>
+            <div class="modal-body-scroll">
+                <span id="modalDate" class="modal-date-tag"></span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalText" class="modal-text-body"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="JS/script.js"></script>
 </body>
