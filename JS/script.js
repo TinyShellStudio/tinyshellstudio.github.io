@@ -1,14 +1,24 @@
 /* =========================================
-   1. PRELOADER (PANTALLA DE CARGA)
+   1. PRELOADER (PANTALLA DE CARGA) MEJORADO
    ========================================= */
+const preloader = document.getElementById("preloader");
+
+// PLAN A: Funciona cuando todo carga perfecto
 window.addEventListener("load", () => {
-    const preloader = document.getElementById("preloader");
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add("hidden");
         }, 1000); 
     }
 });
+
+// PLAN B: Seguridad para móviles (Forzar salida)
+// Si después de 5 segundos (5000ms) sigue ahí, lo quitamos a la fuerza.
+setTimeout(() => {
+    if (preloader && !preloader.classList.contains("hidden")) {
+        preloader.classList.add("hidden");
+    }
+}, 5000);
 
 /* =========================================
    2. FUNCIONES GLOBALES (Noticias de Juegos)
