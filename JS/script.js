@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add("hidden");
-        }, 1000); 
+        }, 500); 
     }
 });
 
@@ -18,7 +18,7 @@ setTimeout(() => {
     if (preloader && !preloader.classList.contains("hidden")) {
         preloader.classList.add("hidden");
     }
-}, 5000);
+}, 1000);
 
 /* =========================================
    2. FUNCIONES GLOBALES (Noticias de Juegos)
